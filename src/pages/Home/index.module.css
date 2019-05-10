@@ -1,0 +1,15 @@
+
+.root {
+	flex-grow: 1;
+	padding-top: 64px;
+}
+
+.grow {
+	flex-grow: 1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8px;
+}
