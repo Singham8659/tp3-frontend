@@ -14,4 +14,9 @@ const removeTask = id => ({
 	id,
 });
 
-export {createTask, updateTask, removeTask};
+const removeTasks = ids => ({
+	type: 'REMOVE_TASKS',
+	ids,
+});
+
+export {createTask, updateTask, removeTask, removeTasks};

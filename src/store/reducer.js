@@ -1,4 +1,6 @@
 
+import {contains} from '../utils';
+
 const defaultState = {
 	tasks: [],
 };
@@ -24,6 +26,12 @@ export default (state = defaultState, action) => {
 			return {
 				...state,
 				tasks: state.tasks.filter((v, i) => i !== action.id),
+			};
+		
+		case 'REMOVE_TASKS':
+			return {
+				...state,
+				tasks: state.tasks.filter((v, i) => !contains(action.ids, i)),
 			};
 		
 		default:
