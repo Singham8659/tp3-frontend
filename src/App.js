@@ -1,11 +1,14 @@
 import React from 'react';
+import {Route, Switch} from 'react-router-dom';
 
-import Button from '@material-ui/core/Button';
+import HomePage from './pages/Home';
+import TasksPage from './pages/Tasks';
 
-const App = () => (
-	<div className="root">
-		<Button>yall</Button>
+export default () => (
+	<div className="app">
+		<Switch>
+			<Route path="/" exact component={HomePage} />
+			<Route path="/tasks" exact component={TasksPage} />
+		</Switch>
 	</div>
 );
-
-export default App;
