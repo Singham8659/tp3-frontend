@@ -2,7 +2,17 @@
 const loadState = () => {
 	try {
 		const json = localStorage.getItem('state');
-		return json ? JSON.parse(json) : undefined;
+		
+		if( json ){
+			const state = JSON.parse(json);
+			
+			for(let task of state.tasks){
+				task.start = new Date(task.start);
+				task.end = new Date(task.end);
+			}
+			
+			return state;
+		}
 	} catch(e){
 		console.error(e);
 		return undefined;
